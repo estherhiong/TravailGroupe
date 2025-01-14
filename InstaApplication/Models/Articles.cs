@@ -2,5 +2,6 @@
 {
     public class Articles
     {
+        public int Id_Articles { get; set; }
     }
 }
