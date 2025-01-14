@@ -1,6 +1,17 @@
-﻿namespace InstaApplication.Models
+﻿
+using Microsoft.EntityFrameworkCore;
+
+namespace InstaApplication.Models
 {
-    public class DbContext
+    public class Myctx : DbContext
     {
+        public Myctx(DbContextOptions<Myctx> options) : base(options)
+        {
+
+        }
+
+        //Dbset
+
+        public DbSet<Client> Clients { get; set; }
     }
 }
