@@ -13,5 +13,11 @@ namespace InstaApplication.Models
         //Dbset
 
         public DbSet<Client> Clients { get; set; }
+
+        public DbSet<Produit> Produits { get; set; }
+
+        public DbSet<Catalogue> Catalogue { get; set; }
+
+
     }
 }
