@@ -9,9 +9,9 @@ namespace InstaApplication.Models
         [StringLength(100, MinimumLength = 3)]
         public string Name { get; set; }
         public string Description { get; set; }
-
+        
         [Required]
         [StringLength(100, MinimumLength = 3)]
-        public decimal Price { get; set; }
+        public double Price { get; set; }
     }
 }

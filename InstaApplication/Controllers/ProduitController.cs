@@ -13,6 +13,16 @@ namespace InstaApplication.Controllers
             _myctx = myctx;
         }
 
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult Create([Bind("Id,Name,Price")] Produit produit)
         {
@@ -20,15 +30,12 @@ namespace InstaApplication.Controllers
             {
                 _myctx.Add(produit);
                 _myctx.SaveChanges();
-                return RedirectToAction(nameof(Index));
+                
             }
             return View(produit);
         }
 
-        public IActionResult Index ()
-        {
-            return View();
-        }
+       
         public IActionResult Details()
         {
             var product = new Produit
