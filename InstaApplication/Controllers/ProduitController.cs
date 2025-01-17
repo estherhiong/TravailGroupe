@@ -5,6 +5,12 @@ namespace InstaApplication.Controllers
 {
     public class ProduitController : Controller
     {
+        private readonly Myctx _myctx;
+
+        public ProduitController(Myctx myctx)
+        {
+            _myctx = myctx;
+        }
         public IActionResult Details()
         {
             var product = new Produit
