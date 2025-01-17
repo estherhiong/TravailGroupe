@@ -1,5 +1,6 @@
 ﻿using InstaApplication.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace InstaApplication.Controllers
 {
@@ -10,6 +11,23 @@ namespace InstaApplication.Controllers
         public ProduitController(Myctx myctx)
         {
             _myctx = myctx;
+        }
+
+        [HttpPost]
+        public IActionResult Create([Bind("Id,Name,Price")] Produit produit)
+        {
+            if (ModelState.IsValid)
+            {
+                _myctx.Add(produit);
+                _myctx.SaveChanges();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(produit);
+        }
+
+        public IActionResult Index ()
+        {
+            return View();
         }
         public IActionResult Details()
         {
