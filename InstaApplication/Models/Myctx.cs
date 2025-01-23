@@ -1,4 +1,5 @@
 ﻿
+using InstaApplication.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace InstaApplication.Models
@@ -17,6 +18,10 @@ namespace InstaApplication.Models
         public DbSet<Produit> Produits { get; set; }
 
         public DbSet<Catalogue> Catalogue { get; set; }
+
+        public DbSet<Produits> Product {  get; set; }
+
+        
 
 
     }

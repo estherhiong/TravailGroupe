@@ -10,23 +10,23 @@ using InstaApplication.Models;
 
 namespace AspMVC.Controllers
 {
-    public class ClientController : Controller
+    public class ProduitsController : Controller
     {
         private readonly Myctx _context;
 
-        public ClientController(Myctx context)
+        public ProduitsController(Myctx context)
         {
 
             _context = context;
         }
 
-        //GET: Produits
+         //GET: Produits
         public IActionResult Index()
         {
-            return View(_context.Clients.ToList());
+            return View(_context.Product.ToList());
         }
 
-        //GET: Produits/Details/5
+         //GET: Produits/Details/5
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -34,14 +34,14 @@ namespace AspMVC.Controllers
                 return NotFound();
             }
 
-            var Clients = _context.Clients
+            var produit = _context.Product
                 .FirstOrDefault(m => m.Id == id);
-            if (Clients == null)
+           if (produit == null)
             {
                 return NotFound();
             }
 
-            return View(Clients);
+           return View(produit);
         }
 
         // GET: Produits/Create
@@ -55,15 +55,15 @@ namespace AspMVC.Controllers
 
 
         [HttpPost]
-        public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients )
+        public IActionResult Create([Bind("Id,Name,Price")] Produits produits)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(Clients);
+                _context.Add(produits);
                 _context.SaveChanges();
                 //return RedirectToAction(nameof(Index));
             }
-            return View(Clients);
+            return View(produits);
         }
 
         // GET: Produits/Edit/5
@@ -74,12 +74,12 @@ namespace AspMVC.Controllers
                 return NotFound();
             }
 
-            var Clients = _context.Clients.Find(id);
-            if (Clients == null)
+            var produit = _context.Product.Find(id);
+            if (produit == null)
             {
                 return NotFound();
             }
-            return View(Clients);
+            return View(produit);
         }
 
         // POST: Produits/Edit/5
@@ -87,9 +87,9 @@ namespace AspMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("Id,Name,Prenom,age,adresse")] Client Clients)
+        public IActionResult Edit(int id, [Bind("Id,Name,Price")] Produits produit)
         {
-            if (id != Clients.Id)
+            if (id != produit.Id)
             {
                 return NotFound();
             }
@@ -98,12 +98,12 @@ namespace AspMVC.Controllers
             {
                 try
                 {
-                    _context.Update(Clients);
+                    _context.Update(produit);
                     _context.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ClientExists(Clients.Id))
+                    if (!ProduitExists(produit.Id))
                     {
                         return NotFound();
                     }
@@ -114,7 +114,7 @@ namespace AspMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(Clients);
+            return View(produit);
         }
 
         // GET: Produits/Delete/5
@@ -125,14 +125,14 @@ namespace AspMVC.Controllers
                 return NotFound();
             }
 
-            var Clients = _context.Clients
+            var produit = _context.Product
                 .FirstOrDefault(m => m.Id == id);
-            if (Clients == null)
+            if (produit == null)
             {
                 return NotFound();
             }
 
-            return View(Clients);
+            return View(produit);
         }
 
         // POST: Produits/Delete/5
@@ -140,19 +140,19 @@ namespace AspMVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var Clients = _context.Clients.Find(id);
-            if (Clients != null)
+            var produit = _context.Product.Find(id);
+            if (produit != null)
             {
-                _context.Clients.Remove(Clients);
+                _context.Product.Remove(produit);
             }
 
             _context.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ClientExists(int id)
+        private bool ProduitExists(int id)
         {
-            return _context.Clients.Any(e => e.Id == id);
+            return _context.Produits.Any(e => e.Id == id);
         }
     }
 }

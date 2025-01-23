@@ -1,10 +1,41 @@
 ﻿using InstaApplication.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace InstaApplication.Controllers
 {
     public class ProduitController : Controller
     {
+        private readonly Myctx _myctx;
+
+        public ProduitController(Myctx myctx)
+        {
+            _myctx = myctx;
+        }
+
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create([Bind("Id,Name,Price")] Produit produit)
+        {
+            if (ModelState.IsValid)
+            {
+                _myctx.Add(produit);
+                _myctx.SaveChanges();
+                
+            }
+            return View(produit);
+        }
+
+       
         public IActionResult Details()
         {
             var product = new Produit
