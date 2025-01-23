@@ -56,10 +56,15 @@ namespace AspMVC.Controllers
 
         [HttpPost]
 <<<<<<< HEAD
+<<<<<<< HEAD
         public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients)
 =======
         public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients )
 >>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
+=======
+        public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients)
+
+>>>>>>> branche2
         {
             if (ModelState.IsValid)
             {
@@ -160,7 +165,11 @@ namespace AspMVC.Controllers
         }
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 =======
 }
 >>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
+=======
+}
+>>>>>>> branche2
