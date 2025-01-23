@@ -7,6 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Myctx>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("InstaDbContext")));
+// Ajouter les services de session
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(50); // Durée de vie de la session
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 

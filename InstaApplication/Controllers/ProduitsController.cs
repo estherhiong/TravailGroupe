@@ -20,29 +20,29 @@ namespace AspMVC.Controllers
             _context = context;
         }
 
-        // GET: Produits
-        //public IActionResult Index()
-        //{
-        //    return View(_context.Produits.ToList());
-        //}
+         //GET: Produits
+        public IActionResult Index()
+        {
+            return View(_context.Product.ToList());
+        }
 
-        // GET: Produits/Details/5
-        //public IActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return NotFound();
-        //    }
+         //GET: Produits/Details/5
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        //    var produit = _context.Produits
-        //        .FirstOrDefault(m => m.Id == id);
-        //    if (produit == null)
-        //    {
-        //        return NotFound();
-        //    }
+            var produit = _context.Product
+                .FirstOrDefault(m => m.Id == id);
+           if (produit == null)
+            {
+                return NotFound();
+            }
 
-        //    return View(produit);
-        //}
+           return View(produit);
+        }
 
         // GET: Produits/Create
 
@@ -74,7 +74,7 @@ namespace AspMVC.Controllers
                 return NotFound();
             }
 
-            var produit = _context.Produits.Find(id);
+            var produit = _context.Product.Find(id);
             if (produit == null)
             {
                 return NotFound();
@@ -87,7 +87,7 @@ namespace AspMVC.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(int id, [Bind("Id,Name,Price")] Produit produit)
+        public IActionResult Edit(int id, [Bind("Id,Name,Price")] Produits produit)
         {
             if (id != produit.Id)
             {
@@ -125,7 +125,7 @@ namespace AspMVC.Controllers
                 return NotFound();
             }
 
-            var produit = _context.Produits
+            var produit = _context.Product
                 .FirstOrDefault(m => m.Id == id);
             if (produit == null)
             {
@@ -140,10 +140,10 @@ namespace AspMVC.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
         {
-            var produit = _context.Produits.Find(id);
+            var produit = _context.Product.Find(id);
             if (produit != null)
             {
-                _context.Produits.Remove(produit);
+                _context.Product.Remove(produit);
             }
 
             _context.SaveChanges();
