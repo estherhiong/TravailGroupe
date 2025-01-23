@@ -55,7 +55,11 @@ namespace AspMVC.Controllers
 
 
         [HttpPost]
+<<<<<<< HEAD
         public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients)
+=======
+        public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients )
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
         {
             if (ModelState.IsValid)
             {
@@ -155,4 +159,8 @@ namespace AspMVC.Controllers
             return _context.Clients.Any(e => e.Id == id);
         }
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131

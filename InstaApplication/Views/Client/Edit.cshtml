@@ -4,6 +4,7 @@
     ViewData["Title"] = "Edit";
 }
 
+<<<<<<< HEAD
 <h1>Edit</h1>
 
 <h4>Client</h4>
@@ -35,15 +36,57 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
+=======
+<h1 style="text-align: center; color: #4CAF50; font-family: Arial, sans-serif;">Modifier un client</h1>
+<hr style="width: 50%; margin: auto; border: 1px solid #4CAF50;" />
+<div class="row" style="display: flex; justify-content: center; margin-top: 20px;">
+    <div class="col-md-6" style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; background-color: white;">
+        <form asp-action="Edit" style="font-family: Arial, sans-serif;">
+            <div asp-validation-summary="ModelOnly" class="text-danger" style="margin-bottom: 20px;"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label asp-for="Name" class="control-label" style="color: #4CAF50; font-weight: bold;"></label>
+                <input asp-for="Name" class="form-control" style="border: 1px solid #ddd; padding: 10px; font-size: 14px; border-radius: 5px;" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label asp-for="Prenom" class="control-label" style="color: #4CAF50; font-weight: bold;"></label>
+                <input asp-for="Prenom" class="form-control" style="border: 1px solid #ddd; padding: 10px; font-size: 14px; border-radius: 5px;" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label asp-for="age" class="control-label" style="color: #4CAF50; font-weight: bold;"></label>
+                <input asp-for="age" class="form-control" style="border: 1px solid #ddd; padding: 10px; font-size: 14px; border-radius: 5px;" />
+                <span asp-validation-for="age" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label asp-for="adresse" class="control-label" style="color: #4CAF50; font-weight: bold;"></label>
+                <input asp-for="adresse" class="form-control" style="border: 1px solid #ddd; padding: 10px; font-size: 14px; border-radius: 5px;" />
+                <span asp-validation-for="adresse" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="text-align: center; margin-top: 20px;">
+                <input type="submit" value="Save" class="btn btn-primary" style="background-color: #4CAF50; border: none; padding: 10px 20px; font-size: 16px; color: white; border-radius: 5px;" />
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
             </div>
         </form>
     </div>
 </div>
 
+<<<<<<< HEAD
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+=======
+<div style="text-align: center; margin-top: 20px;">
+    <a asp-action="Index" style="text-decoration: none; color: #4CAF50; font-weight: bold;">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
 }

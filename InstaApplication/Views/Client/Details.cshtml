@@ -4,6 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
+<<<<<<< HEAD
 <h1>Details</h1>
 
 <div>
@@ -39,4 +40,25 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
+=======
+<h1 style="text-align: center; color: #4CAF50; font-family: Arial, sans-serif;">Détails sur le client</h1>
+
+<div style="margin: 20px auto; width: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 20px; border-radius: 10px; background-color: white; font-family: Arial, sans-serif;">
+    <h4 style="color: #4CAF50; text-align: center;">Client</h4>
+    <hr style="border: 1px solid #4CAF50;">
+    <dl class="row" style="margin-top: 20px;">
+        <dt class="col-sm-4" style="font-weight: bold; color: #4CAF50;">@Html.DisplayNameFor(model => model.Name)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
+        <dt class="col-sm-4" style="font-weight: bold; color: #4CAF50;">@Html.DisplayNameFor(model => model.Prenom)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.Prenom)</dd>
+        <dt class="col-sm-4" style="font-weight: bold; color: #4CAF50;">@Html.DisplayNameFor(model => model.age)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.age)</dd>
+        <dt class="col-sm-4" style="font-weight: bold; color: #4CAF50;">@Html.DisplayNameFor(model => model.adresse)</dt>
+        <dd class="col-sm-8">@Html.DisplayFor(model => model.adresse)</dd>
+    </dl>
+</div>
+<div style="text-align: center; margin-top: 20px;">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" style="text-decoration: none; color: #2196F3; font-weight: bold; margin-right: 10px;">Modifier</a>
+    <a asp-action="Index" style="text-decoration: none; color: #4CAF50; font-weight: bold;">Retour à la liste</a>
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
 </div>
