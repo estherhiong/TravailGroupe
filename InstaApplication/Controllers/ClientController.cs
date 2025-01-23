@@ -56,6 +56,7 @@ namespace AspMVC.Controllers
 
         [HttpPost]
         public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients)
+
         {
             if (ModelState.IsValid)
             {
