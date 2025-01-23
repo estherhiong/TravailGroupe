@@ -15,6 +15,8 @@ namespace InstaApplication.Controllers
 
         public IActionResult Index()
         {
+
+            ViewBag.message = "Bonjour";
             return View();
         }
 

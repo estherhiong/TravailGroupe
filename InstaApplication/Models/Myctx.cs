@@ -1,4 +1,5 @@
 ﻿
+using InstaApplication.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace InstaApplication.Models
@@ -13,5 +14,15 @@ namespace InstaApplication.Models
         //Dbset
 
         public DbSet<Client> Clients { get; set; }
+
+        public DbSet<Produit> Produits { get; set; }
+
+        public DbSet<Catalogue> Catalogue { get; set; }
+
+        public DbSet<Produits> Product {  get; set; }
+
+        
+
+
     }
 }
