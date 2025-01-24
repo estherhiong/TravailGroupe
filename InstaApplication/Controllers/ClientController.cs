@@ -51,36 +51,7 @@ namespace AspMVC.Controllers
         {
             return View();
         }
-
-
-
-        [HttpPost]
-        public IActionResult Create([Bind("Id,Name,Prenom,age,adresse")] Client Clients)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(Clients);
-                _context.SaveChanges();
-                //return RedirectToAction(nameof(Index));
-            }
-            return View(Clients);
-        }
-
-        // GET: Produits/Edit/5
-        public IActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var Clients = _context.Clients.Find(id);
-            if (Clients == null)
-            {
-                return NotFound();
-            }
-            return View(Clients);
-        }
+         [HttpPost]
 
         // POST: Produits/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -114,24 +85,6 @@ namespace AspMVC.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(Clients);
-        }
-
-        // GET: Produits/Delete/5
-        public IActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var Clients = _context.Clients
-                .FirstOrDefault(m => m.Id == id);
-            if (Clients == null)
-            {
-                return NotFound();
-            }
-
             return View(Clients);
         }
 

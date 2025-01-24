@@ -9,8 +9,9 @@ namespace InstaApplication.Controllers
         {
             var Inscriptions = new Inscription
             {
-                Name = "Kenne",
-                Email = "kennewhonore0@icloud.com",
+                Id="1",
+                Name = "Chadai",
+                Email = "chadaimabiala@gmail.com",
                 Password = "**********",
                 ConfirmPassword = "**********",
 
@@ -23,7 +24,7 @@ namespace InstaApplication.Controllers
             var Connexions = new Connexion
             {
                
-                Email = "kennewhonore0@icloud.com",
+                Email = "chadaimabiala@gmail.com",
                 Password = "**********",
                
 

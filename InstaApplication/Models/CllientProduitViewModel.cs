@@ -4,7 +4,7 @@ namespace InstaApplication.Models
 {
     public class CllientProduitViewModel
     {
-        public Produit produits { get; set; }
-        public Client clients { get; set; }
+        public required Produit produits { get; set; }
+        public required Client clients { get; set; }
     }
 }
