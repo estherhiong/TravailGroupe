@@ -5,9 +5,26 @@
 }
 
 @model Connexion
+<<<<<<< HEAD
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - InstaApplication</title>
+    <link rel="stylesheet" href="~/InstaApplication.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Produits.css" asp-append-version="true" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="account-container">
+        <div class="row">
+<form asp-action="index" method="post">
+=======
 <h3>Entrez vos information de connexion !!</h3>
 <form asp-action="index" method="post">
     
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
     <div class="form-group">
         <label asp-for="Email" class="control-label"></label>
         <input asp-for="Email" class="form-control" placeholder="Entrez votre Email" />
@@ -16,10 +33,23 @@
         <label asp-for="Password" class="control-label"></label>
         <input asp-for="Password" class="form-control" placeholder="Entrez votre mot de passe" />
     </div>
+<<<<<<< HEAD
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Connexion</button>
+</form>
+</div>
+    </div>
+</body>
+</html>
+=======
   
 
 
     <button type="submit" class="btn btn-primary">Connexion</button>
 
 </form>
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
 

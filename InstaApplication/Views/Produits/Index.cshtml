@@ -3,6 +3,72 @@
 @{
     ViewData["Title"] = "Index";
 }
+<<<<<<< HEAD
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Produits</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7Kw1TIq0v8Fq1KN8zF6U8tx3VtV/htX0TtDeGVk4l+wNl0z6MOfqKxa" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Produits.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/js/poduits.js" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InstaApplication.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+        <div class="titre2">
+           <h3>La liste des produits</h3>
+        </div>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Rechercher un produit" class="search-input">
+        <button class="search-btn" onclick="searchProduct()">Rechercher</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Price)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="table-row">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn2 btn-edit">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn2 btn-details">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn2 btn-delete">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <p>
+        <a asp-action="Create" class="btn-primary2">Ajouter un Produit</a>
+    </p>
+    <!-- Message d'erreur si le produit n'est pas trouvé -->
+    <div id="error-message" class="error-message">
+        <p>Aucun produit trouvé !</p>
+        <button onclick="closeErrorMessage()">OK</button>
+    </div>
+    </body>
+</html>
+
+
+
+=======
 
 <h1>Index</h1>
 
@@ -39,3 +105,4 @@
 }
     </tbody>
 </table>
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131

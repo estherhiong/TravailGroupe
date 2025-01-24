@@ -9,6 +9,21 @@ namespace InstaApplication.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+<<<<<<< HEAD
+        public string Name { get; set; }
+        public string Prenom { get; set; }
+
+        public int age { get; set; }
+
+
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Adresse")]
+        [Required(ErrorMessage = "Merci de saisir le nom")]
+        [MinLength(2, ErrorMessage = "Au moins deux caractères")]
+        public string adresse { get; set; }
+
+
+=======
         [Display(Name = "Nom :")]
         [Required(ErrorMessage = "Merci de saisir le nom")]
         [MinLength(1, ErrorMessage = "Au moins un caractère")]
@@ -27,5 +42,7 @@ namespace InstaApplication.Models
         [MinLength(1, ErrorMessage = "Au moins deux caractères")]
         public string adresse { get; set; }
 
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
     }
 }
+//

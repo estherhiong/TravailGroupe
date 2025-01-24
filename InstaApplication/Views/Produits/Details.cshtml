@@ -4,6 +4,55 @@
     ViewData["Title"] = "Details";
 }
 
+<<<<<<< HEAD
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Produits</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-pzjw8f+ua7Kw1TIq0v8Fq1KN8zF6U8tx3VtV/htX0TtDeGVk4l+wNl0z6MOfqKxa" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/Produits.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/js/poduits.js" asp-append-version="true" />
+    <link rel="stylesheet" href="~/InstaApplication.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+   <div class="titre2">
+        <h3>Details d'un produit</h3>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Détail</th>
+                <th scope="col">Information</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-row">
+                <td>@Html.DisplayNameFor(model => model.Name)</td>
+                <td>@Html.DisplayFor(model => model.Name)</td>
+            </tr>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.Price)</td>
+                <td>@Html.DisplayFor(model => model.Price)</td>
+            </tr>
+            <!-- Ligne des boutons -->
+            <tr>
+                <td colspan="2" class="text-center">
+                    <!-- Bouton pour l'édition -->
+                    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn-primary2">Modifier</a>
+                    <!-- Bouton pour revenir à la liste -->
+                    <a asp-action="Index" class="btn-primary2">Retour à la liste</a>
+                    <a asp-action="Create" class="btn-primary2">Ajouter un Produit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+=======
 <h1>Details</h1>
 
 <div>
@@ -28,3 +77,4 @@
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
+>>>>>>> 3746a6f8bb944067f9e482348c9443506b6c8131
